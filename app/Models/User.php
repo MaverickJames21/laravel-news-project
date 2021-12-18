@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified_at',
+
     ];
 
     /**
@@ -41,4 +43,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //record link profil
+    public function profil()
+    {
+    return $this->belongsTo(Profil::class);
+    }
+
 }
+

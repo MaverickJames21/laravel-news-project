@@ -13,8 +13,10 @@ class ProfilFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
-        ];
+            return [
+                'avatar' => $this->faker->avatar(),
+                'pseudo' => $this->faker->pseudo(),
+                'ville' => $this->faker->ville(),
+            ];
     }
 }

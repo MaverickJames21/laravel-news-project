@@ -8,4 +8,35 @@ use Illuminate\Database\Eloquent\Model;
 class profil extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'avatar',
+        'pseudo',
+        'ville',
+    ];
+
+
+    //record link like
+    public function likes()
+        {
+        return $this->hasMany (Like::class);
+        }
+    //record link comment
+    public function comments()
+        {
+        return $this->hasMany(Comment::class);
+        }
+    //record link post
+    public function posts()
+        {
+        return $this->hasMany(Post::class);
+        }
+
+
+
+    // //record link abbonements
+    // public function abbonements()
+    //     {
+    //     return $this->hasOne(Abbonement::class);
+    //     }
 }

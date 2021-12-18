@@ -15,13 +15,9 @@ class CreateProfilsTable extends Migration
     {
         Schema::create('profils', function (Blueprint $table) {
             $table->id();
-            $table->string('avatar', 260);
+            $table->binary('avatar', 260);
             $table->char('pseudo', 30);
-            $table->string('password');
-            $table->string('email', 71)->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->char('ville', 30);
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
@@ -29,6 +25,13 @@ class CreateProfilsTable extends Migration
             ->on('users')
             ->onDelete('restrict')
             ->onUpdate('restrict');
+
+            // $table->unsignedBigInteger('post_id');
+            // $table->foreign('post_id')
+            // ->references('id')
+            // ->on('posts')
+            // ->onDelete('restrict')
+            // ->onUpdate('restrict');
         });
     }
 

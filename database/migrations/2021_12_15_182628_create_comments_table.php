@@ -25,12 +25,7 @@ class CreateCommentsTable extends Migration
             ->onDelete('restrict')
             ->onUpdate('restrict');
 
-            $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')
-            ->references('id')
-            ->on('posts')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
+
         });
     }
 
