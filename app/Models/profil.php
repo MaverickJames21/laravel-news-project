@@ -32,6 +32,11 @@ class profil extends Model
         return $this->hasMany(Post::class);
         }
 
+        public function user()
+        {
+        return $this->belongsTo(User::class);
+        }
+
 
 
     // //record link abbonements
