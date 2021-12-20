@@ -17,6 +17,14 @@ use App\Http\Controllers\Api\UserController;
 */
 Route::resource('users', UserController::class);
 
+// Add login route because Laravel needs it (Or add Accept: application/json to all requests),
+Route::get('/login', function () {
+    return response()->json([
+      'status_code' => 400,
+      'message' => 'error'
+    ]);
+  })->name('login');
+
 
 // Login user
 

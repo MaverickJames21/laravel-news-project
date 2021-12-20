@@ -20,8 +20,18 @@ class UserService {
         $users = User::paginate(10);
         return $users;
         // Return collection of posts as a resource
+    }
 
+    public function getUser($id)
+    {
+        // Get a single user
+        $user = User::findOrFail($id);
+        $user->posts;
 
+        // Return a single user as a resource
+        return $user;
+
+        //return User::all();
     }
 
 }

@@ -7,7 +7,6 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Like;
 use App\Models\Comment;
-use App\Models\Abbonement;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 

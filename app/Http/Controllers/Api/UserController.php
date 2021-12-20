@@ -30,18 +30,14 @@ class UserController extends Controller
 
     }
 
-
-    public function getUser($id)
+    public function show($id)
     {
-        // Get a single user
-        $user = User::findOrFail($id);
-        $user->posts;
-
-        // Return a single user as a resource
-        return $user;
-
-        //return User::all();
+        $user = $this->userService->getUser($id);
+        return new UserResource($user);
     }
+
+
+
 }
 
 
