@@ -19,7 +19,6 @@ class UserFactory extends Factory
             'name' => $this->faker->word,
             'email' => $email,
             'password' => bcrypt('123456'), // password
-            'remember_token' => Str::random(10),
         ];
     }
 }

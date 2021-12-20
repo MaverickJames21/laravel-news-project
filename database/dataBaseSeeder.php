@@ -21,58 +21,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // Create admin role
-        $admin_role = Role::create(['name' => 'admin']);
+        // Create 50 user
+        $users = User::factory()->count(50)->create();
 
-        // Create permissions.
-        $permission_create_post = Permission::create(['name' => 'create post']);
-
-        // Give permission to role admin
-        $admin_role->givePermissionTo($permission_create_post);
-
-        //Info users
-        $users = User::factory()->count(90)->create();
-
-        // Give admin role to the user.
-        $users[0]->assignRole($admin_role);
-
-        // Insert profils
-        $profils = User::factory()->count(20)->creat()
-            ->each(function($profil) use ($users) {
-                $profil->user_id = $users->random()->id;
-                $profil->save();
-            });
-
-        //Insert posts
-        $posts = Post::factory()->count(100)->make()
-            ->each(function($post) use ($users) {
-            $post->user_id = $users->random()->id;
-            $post->save();
-            });
-
-
-        //Insert likes
-        $likes = Like::factory()->count(50)->make()
-            ->each(function($like) use ($users, $posts) {
-            $like->user_id = $users->random()->id;
-            $like->post_id = $posts->random()->id;
-            $like->save();
-        });
-
-
-        //Insert comments
-        $comments = Comment::factory()->count(60)->make()
-            ->each(function($comment) use ($users, $posts) {
-            $comment->user_id = $users->random()->id;
-            $comment->post_id = $posts->random()->id;
-            $comment->save();
-        });
-
-        // //Insert abbonements
-        // $abbonements = Abbonement::factory()->count(20)->make()
-        //     ->each(function($abbonement) use ($users) {
-        //     $abbonement->user_id = $users->random()->id;
-        //     $abbonement->save();
-        // });
     }
 }
