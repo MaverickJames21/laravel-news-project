@@ -29,6 +29,19 @@ class UserController extends Controller
         return UserResource::collection($users);
 
     }
+
+
+    public function getUser($id)
+    {
+        // Get a single user
+        $user = User::findOrFail($id);
+        $user->posts;
+
+        // Return a single user as a resource
+        return $user;
+
+        //return User::all();
+    }
 }
 
 

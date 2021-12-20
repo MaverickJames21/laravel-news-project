@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-             // Je crée 30 users
-             $users = User::factory()->count(30)->create();
+             // Je crée 40 users
+             $users = User::factory()->count(40)->create();
 
         // \App\Models\User::factory(10)->create();
     }
