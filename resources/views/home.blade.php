@@ -25,7 +25,7 @@
     $newsData = json_decode($response);
 
     foreach ($newsData->articles as $News) {
-        # code...
+        {
     }
 
   ?>
@@ -68,6 +68,9 @@
         </div>
     </div>
 
+    <?php
+    }
+    ?>
 
 
 
