@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
         {{-- first section --}}
     <div class="card bg-dark text-white">
         <img src="img/roadMapDeveloper.jpeg" class="card-img" alt="...">
@@ -15,13 +17,27 @@
 
 
     {{-- second section --}}
+    <?php
+
+
+    $url = 'https://newsapi.org/v2/everything?q=apple&from=2021-12-22&to=2021-12-22&sortBy=popularity&apiKey=182706a4218e4d54820c0c72dd52488c';
+    $response = file_get_contents($url);
+    $newsData = json_decode($response);
+
+    foreach ($newsData->articles as $News) {
+        # code...
+    }
+
+  ?>
+
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card h-100">
-                <img src="img/javascript.jpeg" class="card-img-top" alt="...">
+                <img src="<?php echo $News ->urlToImage ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">Title: <?php echo $News ->title ?></h5>
+                        <p class="card-description">Description: <?php echo $News->description ?></p>
+                        <p class="card-content">Content: <?php echo $News->content ?></p>
                         <button type="button" class="btn btn-primary btn-sm">Small button</button>
                 </div>
             </div>
@@ -29,10 +45,11 @@
 
         <div class="col">
             <div class="card h-100">
-                <img src="img/javascript.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a short card. blablablbalalablablablablablbalablbalablalablaba</p>
+                <img src="<?php echo $News ->urlToImage ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                        <h5 class="card-title">Title: <?php echo $News ->title ?></h5>
+                        <p class="card-description">Description: <?php echo $News->description ?></p>
+                        <p class="card-content">Content: <?php echo $News->content ?></p>
                         <button type="button" class="btn btn-primary btn-sm">Small button</button>
                     </div>
             </div>
@@ -40,15 +57,18 @@
 
         <div class="col">
             <div class="card h-100">
-                <img src="img/javascript.jpeg" class="card-img-top" alt="...">
+                <img src="<?php echo $News ->urlToImage ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                        <h5 class="card-title">Title: <?php echo $News ->title ?></h5>
+                        <p class="card-description">Description: <?php echo $News->description ?></p>
+                        <p class="card-content">Content: <?php echo $News->content ?></p>
+                        <button type="button" class="btn btn-primary btn-sm">Small button</button>
                 </div>
             </div>
         </div>
     </div>
+
+
 
 
 @endsection
