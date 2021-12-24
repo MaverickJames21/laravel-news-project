@@ -14,8 +14,8 @@ use App\Http\Controllers\MainViewController;
 |
 */
 
-Route::get('/test',function() {
-    return view('test');
+Route::get('/chat',function() {
+    return view('chat');
 });
 
 // Route::get('/home',function() {

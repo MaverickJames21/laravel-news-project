@@ -47,9 +47,9 @@
             <div class="card h-100">
                 <img src="<?php echo $News ->urlToImage ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                        <h5 class="card-title">Title: <?php echo $News ->title ?></h5>
-                        <p class="card-description">Description: <?php echo $News->description ?></p>
-                        <p class="card-content">Content: <?php echo $News->content ?></p>
+                        <h5 class="card-title"> <?php echo $News ->title ?></h5>
+                        <p class="card-description"> <?php echo $News->description ?></p>
+
                         <button type="button" class="btn btn-primary btn-sm">Small button</button>
                     </div>
             </div>

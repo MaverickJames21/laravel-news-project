@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Resources\Views\Home;
+use app\resources\views\home;
 
 
 class ApiNewsController extends Controller
@@ -20,7 +20,5 @@ class ApiNewsController extends Controller
     // }
 
     }
-
-
 
 }
