@@ -24,3 +24,8 @@ Route::get('/chat',function() {
 
 Route::get('/', [ MainViewController::class,'home' ]);
 
+
+Auth::routes();
+
+
+Route::get('items', [ MainViewController::class,'item' ]);

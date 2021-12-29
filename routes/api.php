@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\PostController;
+
 
 
 /*
@@ -24,6 +26,9 @@ Route::get('/login', function () {
       'message' => 'error'
     ]);
   })->name('login');
+
+  Route::resource('posts', PostController::class)->except('store');
+
 
 
 // Login user

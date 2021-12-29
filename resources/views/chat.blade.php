@@ -292,7 +292,7 @@
                   <li class="active">
                     <div class="d-flex bd-highlight">
                       <div class="img_cont">
-                        <img src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png" class="rounded-circle user_img">
+                        <img src="img/maverick.jpg" class="rounded-circle user_img">
                         <span class="online_icon"></span>
                       </div>
                       <div class="user_info">
@@ -304,7 +304,7 @@
                   <li>
                     <div class="d-flex bd-highlight">
                       <div class="img_cont">
-                        <img src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png" class="rounded-circle user_img">
+                        <img src="img/maverick2.jpg" class="rounded-circle user_img">
                         <span class="online_icon offline"></span>
                       </div>
                       <div class="user_info">
